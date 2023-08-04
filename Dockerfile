@@ -8,6 +8,8 @@ RUN npm install -p
 
 COPY . . 
 
+EXPOSE 80
+
 RUN npm run build 
 
 FROM httpd  

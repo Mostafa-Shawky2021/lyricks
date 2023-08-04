@@ -1,0 +1,10 @@
+services:
+  lyricks-app:
+    build: .
+    image: lyricks-app
+    container_name: lyricks-container
+    ports:
+      - 80:80
+    
+    
+  
