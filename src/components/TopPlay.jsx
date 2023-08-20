@@ -78,7 +78,7 @@ const TopPlay = () => {
   return (
     <div
       ref={divRef}
-      className="xl:ml-6 ml-0 xl:mb-0 mb-6 mt-2 flex-1 xl:w-[380px] flex flex-col"
+      className="xl:ml-6 ml-0 xl:mb-0 mb-6 mt-3 flex-1 xl:w-[380px] flex flex-col"
     >
       <div className="flex flex-col w-full">
         <div className=" flex align-center justify-between w-full">
@@ -88,7 +88,7 @@ const TopPlay = () => {
           </Link>
         </div>
 
-        <div className="flex flex-col gap-1 mt-3 xl:h-[calc(100vh-400px)] overflow-y-auto hide-scrollbar  min-h-[120px]">
+        <div className="flex flex-col gap-1 mt-3 xl:h-[210px] overflow-y-auto hide-scrollbar  min-h-[120px]">
           {topPlays?.map((song, i) => (
             <TopChartCard
               key={song.key}
@@ -120,7 +120,7 @@ const TopPlay = () => {
           modules={[FreeMode]}
           className="mt-4"
         >
-          {topPlays?.map((song, i) => (
+          {topPlays?.map((song) => (
             <SwiperSlide
               key={song.key}
               style={{ width: "25%" }}

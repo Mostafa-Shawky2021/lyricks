@@ -35,13 +35,16 @@ const SongDetails = () => {
       <div>
         {songData?.sections[1]?.type === "LYRICS" ? (
           songData.sections[1].text.map((line, i) => (
-            <p className="text-gray-400 my-1">{line}</p>
+            <p className="text-gray-400 my-1" key={i}>
+              {line}
+            </p>
           ))
         ) : (
           <p className="text-gray-400">Sorry no lyrics found</p>
         )}
       </div>
       <RelatedSongs
+        activeSong={activeSong}
         data={relatedSongs?.tracks}
         isPlaying={isPlaying}
         handlePause={handlePause}

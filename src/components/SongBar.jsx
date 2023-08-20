@@ -9,8 +9,8 @@ const SongBar = ({
   artistId,
   isPlaying,
   activeSong,
-  handlePauseClick,
-  handlePlayClick,
+  handlePause,
+  handlePlay,
 }) => {
   return (
     <div
@@ -41,9 +41,11 @@ const SongBar = ({
               {song?.attributes?.name}
             </p>
           )}
-          <p className="text-base text-gray-400 mt-1">
-            {artistId ? song?.attributes?.albumName : song?.subtitle}
-          </p>
+          <Link to={`/songs/${song.key}`}>
+            <p className="text-base text-gray-400 mt-1">
+              {artistId ? song?.attributes?.albumName : song?.subtitle}
+            </p>
+          </Link>
         </div>
       </div>
       {!artistId ? (
@@ -51,8 +53,8 @@ const SongBar = ({
           isPlaying={isPlaying}
           activeSong={activeSong}
           song={song}
-          handlePause={handlePauseClick}
-          handlePlay={() => handlePlayClick(song, i)}
+          handlePause={handlePause}
+          handlePlay={handlePlay}
         />
       ) : null}
     </div>
