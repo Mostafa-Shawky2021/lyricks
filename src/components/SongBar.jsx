@@ -41,11 +41,9 @@ const SongBar = ({
               {song?.attributes?.name}
             </p>
           )}
-          <Link to={`/songs/${song.key}`}>
-            <p className="text-base text-gray-400 mt-1">
-              {artistId ? song?.attributes?.albumName : song?.subtitle}
-            </p>
-          </Link>
+          <p className="text-base text-gray-400 mt-1">
+            {artistId ? song?.attributes?.albumName : song?.subtitle}
+          </p>
         </div>
       </div>
       {!artistId ? (
